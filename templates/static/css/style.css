@@ -1,0 +1,177 @@
+:root {
+  --primary-bg: #0a0f1c;
+  --secondary-bg: #121a2f;
+  --neon-blue: #00f0ff;
+  --accent-color: #00f0ff;
+  --neon-glow: 0 0 10px #00f0ff, 0 0 20px #00f0ff;
+  --text-light: #e6e6e6;
+}
+
+/* GLOBAL */
+body {
+  background-color: var(--primary-bg);
+  color: var(--text-light);
+  font-family: "Segoe UI", sans-serif;
+  overflow-x: hidden;
+}
+
+/* HEADINGS */
+h1,
+h2,
+h3 {
+  font-weight: 700;
+}
+
+/* SECTION SPACING */
+section {
+  padding: 100px 0;
+}
+
+/* BUTTONS */
+.btn-primary {
+  background-color: var(--accent-color);
+  border: none;
+  color: #000;
+}
+
+.btn-primary:hover {
+  background-color: #00c8d8;
+}
+
+/* HERO SECTION */
+.hero-section {
+  min-height: 100vh;
+  background: url("/static/images/hero.png") no-repeat center center/cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* OVERLAY */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 10, 25, 0.75);
+}
+
+/* CONTENT */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  text-align: center;
+}
+
+/* TEXT */
+.hero-title {
+  font-size: 3.8rem;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  max-width: 700px;
+  margin: 20px auto;
+  color: #cfcfcf;
+  padding: 0 15px;
+}
+
+/* NEON TEXT */
+.neon-text {
+  color: var(--neon-blue);
+  text-shadow: var(--neon-glow);
+}
+
+/* BUTTONS */
+.neon-btn {
+  background: var(--neon-blue);
+  color: black;
+  padding: 12px 28px;
+  border-radius: 6px;
+  box-shadow: var(--neon-glow);
+  transition: 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.neon-btn:hover {
+  background: #00c8d8;
+}
+
+/* OUTLINE BUTTON */
+.neon-outline {
+  border: 2px solid var(--neon-blue);
+  color: var(--neon-blue);
+  padding: 12px 28px;
+  border-radius: 6px;
+  transition: 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.neon-outline:hover {
+  background: var(--neon-blue);
+  color: black;
+  box-shadow: var(--neon-glow);
+}
+
+/* HERO BUTTON GROUP */
+.hero-buttons {
+  margin-top: 25px;
+}
+
+/* HERO BACKGROUND ANIMATION (DESKTOP ONLY) */
+.hero-section {
+  animation: zoomBg 18s infinite alternate;
+}
+
+@keyframes zoomBg {
+  0% {
+    background-size: 100%;
+  }
+  100% {
+    background-size: 110%;
+  }
+}
+
+/* =========================
+   MOBILE RESPONSIVENESS
+========================= */
+@media (max-width: 768px) {
+  section {
+    padding: 60px 0;
+  }
+
+  .hero-section {
+    min-height: auto;
+    padding: 120px 0;
+    animation: none;
+    background-size: cover;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .hero-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .hero-buttons a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar-nav .btn {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
